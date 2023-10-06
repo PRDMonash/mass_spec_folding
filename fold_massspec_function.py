@@ -4,9 +4,7 @@ import math
 from scipy.interpolate import interp1d
 import os
 
-def fold_massspec(mz_min, mz_max, monoisotopicweight, csv_file_path):
-    # Read CSV data
-    data = pd.read_csv(csv_file_path, header=None, names=['m/z', 'intensity'])
+def fold_massspec(mz_min, mz_max, monoisotopicweight, data):
 
     # Filter data within the mz range
     data = data[(data['m/z'] >= mz_min) & (data['m/z'] <= mz_max)]
